@@ -36,5 +36,11 @@ public class ProductDetailsController {
 	public ResponseDTO getProductDetailsById(@PathVariable String productId) {
 		return service.getProductById(productId);
 	}
+
+	@GetMapping
+	public void getProductDetailsByName() {
+		System.out.println("###############");
+		
+	}
 	
 }
