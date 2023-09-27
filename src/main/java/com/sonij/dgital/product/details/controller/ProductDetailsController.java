@@ -36,5 +36,5 @@ public class ProductDetailsController {
 	public ResponseDTO getProductDetailsById(@PathVariable String productId) {
 		return service.getProductById(productId);
 	}
-
+	
 }

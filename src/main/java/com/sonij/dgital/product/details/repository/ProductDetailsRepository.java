@@ -57,9 +57,8 @@ public class ProductDetailsRepository {
 	}else {
 		System.out.println("Record Not Found");
 		return null;
+	  }
 	}
-	}
-	
 	
 	
 

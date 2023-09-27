@@ -29,25 +29,14 @@ public class ProductDetailsService {
 		  System.out.println("No Record Found");
 		else{	
 			List<Map<String,Object>> ls = res.get();
-			ls.stream().filter(map -> map.get("category_name").equals("GOLD")).forEach(map ->{
+			ls.forEach(map -> {
 				ProductDetailsResponse productDtlsRes = new ProductDetailsResponse();
 				productDtlsRes.setProductId((String)map.get("product_id"));
 				productDtlsRes.setProductName((String)map.get("product_name"));
 				productDtlsRes.setProductCategory((String)map.get("category_name"));
 				System.out.println(productDtlsRes.toString());
-			    response.add(productDtlsRes);	
-				});
-			
-			
-//			ls.forEach(map -> {
-//				ProductDetailsResponse productDtlsRes = new ProductDetailsResponse();
-//				productDtlsRes.setProductId((String)map.get("product_id"));
-//				productDtlsRes.setProductName((String)map.get("product_name"));
-//				productDtlsRes.setProductCategory((String)map.get("category_name"));
-//				System.out.println(productDtlsRes.toString());
-//				response.add(productDtlsRes);
-//			});
-//			responseList.setProductDetailsList(res.get());
+				response.add(productDtlsRes);
+			});
 		}
 		responseList.setProductDetailsList(response);
 		return responseList;
@@ -85,5 +74,7 @@ public class ProductDetailsService {
 	    }
 		return resDTO;	
 	}
+	
+	
 
 }
